@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task manager</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="container">
+
+		<nav class="navbar navbar-light bg-light">
+ 			<span class="navbar-brand mb-0 h1">Task manager</span>
+ 		
+		<a href="/signout/">
+		<button type="button" style="float: right;" class="btn btn-dark">
+		Signout
+		</button>	
+		</a>
+		</nav>
+
+<br>
+	<div class="card">
+  <div class="card-body">
+    <center><h5>Add more tasks</h5></center><br>
+    <center>
+        <a href="/addtask/" ><button type="button" class="btn btn-dark">Add a task</button></a>
+    </center>
+ 
+  </div>
+</div><br>
+
+	<div class="card">
+		<div class="card-body">
+  	<center>
+  		
+		{% for post in all_items %}
+			<h1>{{post.title}}</h1>
+			<h4>{{post.description}}</h4>
+			<h5>{{post.timestamp}}</h5>
+			<p>{{post.is_completed}}</p>
+			<a href="/mark-todo-done/{{post.id}}/">
+			<button type="button" class="btn btn-dark">
+					Mark To Do as done
+			</button></a><br><br>
+			<a href="/delete/{{post.id}}">Delete this task</a><hr>
+
+
+		{% endfor %}
+  	
+  	</center>
+  </div>
+</div>	
+	
+	</div>
+
+
+</body>
+</html>

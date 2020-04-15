@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add a task</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+</head>
+<body style="">
+	<div class="container">
+	<nav class="navbar navbar-light bg-light">
+	  <a class="navbar-brand" href="/allevents/">
+	    <img src="download.jpg" width="30" height="30" class="d-inline-block align-top" alt="">&emsp;&emsp;&emsp;
+	    	Task manager
+	  </a>
+	  <a href="/signout/"><button type="button" class="btn btn-dark">Signout</button></a>
+	</nav><br>
+
+
+<div class="card">
+  <div class="card-body">
+   
+  	<center><b>	
+	<h4>Add a task</h4>
+  	</b>
+  	</center>
+
+	<form method="POST" action="/addtask/">
+		
+		{% csrf_token %}
+		<label>Title</label>
+		<input type="text" name="title" class="form-control"><br>
+		<label>Description</label>
+		<textarea class="form-control" name="description" ></textarea></br><center>
+		<button type="submit" class="btn btn-dark">Add this task</button>
+		</center>
+
+		
+	</form>
+
+	<hr>
+	<center><a href="/home/"><button type="button" class="btn outline-info">Go back to Task manager</a></button></center>
+  </div>
+</div>
+</div>
+</body>
+</html>
